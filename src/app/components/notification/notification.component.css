@@ -2,3 +2,9 @@
 .k-grid tbody {
     cursor: pointer !important;
 }
+
+/* overrriding the row class of bootstrap to remove the margin of div row */
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
