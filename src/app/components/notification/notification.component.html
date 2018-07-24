@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel">
+      <div class="panel-header">
+
+        <div class="row">
+
+          <div class="col-sm-12">
+            <br>
+          </div>
+
+        </div>
+      </div>
+      <div class="panel-body">
+
+        <div class="row">
+
+          <div class="col-sm-12">
+
+
+            <kendo-grid [data]="view | async" [loading]="loading" [pageSize]="state.take" [skip]="state.skip" [selectable]="true" (selectionChange)="selectedRowChange($event)"
+              [pageable]="true" [scrollable]="'none'" (dataStateChange)="dataStateChange($event)">
+              <kendo-grid-column field="SenderEmail" title="Sender Email">
+              </kendo-grid-column>
+              <kendo-grid-column field="Type" title="Type">
+              </kendo-grid-column>
+              <kendo-grid-column field="Language" title="Language">
+              </kendo-grid-column>
+              <kendo-grid-column field="Country" title="Country">
+              </kendo-grid-column>
+              <kendo-grid-column field="State" title="Status">
+              </kendo-grid-column>
+              <kendo-grid-column field="Created" title="Created" format="{0:MM/dd/yyyy}">
+              </kendo-grid-column>
+              <kendo-grid-column field="HasAttachment" title="Has attachment" [sortable]="false">
+                <ng-template kendoGridCellTemplate let-dataItem>
+                  <input type="checkbox" [checked]="dataItem.HasAttachment" disabled/>
+                </ng-template>
+              </kendo-grid-column>
+
+            </kendo-grid>
+
+
+            <notification-detail *ngIf="displayNotificationDetail" [model]="notificationDetail" [readonly]="true" (close)="closeHandler()">
+
+            </notification-detail>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,4 @@
+/* changing the mouse cursor to hand when moving over the grid rows*/
+.k-grid tbody {
+    cursor: pointer !important;
+}

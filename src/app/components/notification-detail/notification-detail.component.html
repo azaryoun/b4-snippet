@@ -1,0 +1,113 @@
+<kendo-dialog (close)="onClose($event)">
+  <kendo-dialog-titlebar>
+    Notification Detail
+  </kendo-dialog-titlebar>
+
+  <form novalidate [formGroup]="formGroupNotificationDetail">
+    <div class="row">
+      <div class="col-sm-6">
+        <kendo-textbox-container floatingLabel="Type">
+          <input type="text" class="k-textbox" [readonly]="readonly" formControlName="Type" />
+
+        </kendo-textbox-container>
+
+      </div>
+      <div class="col-sm-6">
+        <kendo-textbox-container floatingLabel="Language">
+          <input type="text" class="k-textbox" [readonly]="readonly" formControlName="Language" />
+
+        </kendo-textbox-container>
+
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+        <kendo-textbox-container floatingLabel="Country">
+          <input type="text" class="k-textbox" [readonly]="readonly" formControlName="Country" />
+
+        </kendo-textbox-container>
+
+      </div>
+      <div class="col-sm-6">
+        <kendo-textbox-container floatingLabel="Receiver email">
+          <input type="text" class="k-textbox" [readonly]="readonly" formControlName="ReceiverEmail" />
+
+        </kendo-textbox-container>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <kendo-textbox-container floatingLabel="Sender email">
+          <input type="text" class="k-textbox" [readonly]="readonly" formControlName="SenderEmail" />
+
+        </kendo-textbox-container>
+
+      </div>
+      <div class="col-sm-6">
+        <kendo-textbox-container floatingLabel="Status">
+          <input type="text" class="k-textbox" [readonly]="readonly" formControlName="State" />
+
+        </kendo-textbox-container>
+
+      </div>
+    </div>
+
+
+
+
+    <div class="row">
+
+      <div class="col-sm-6">
+
+        <div class="form-group" style="padding-top: 15px">
+
+          <label for="notificationData" class="control-label">Has attachment</label>
+
+          <kendo-switch [onLabel]="'Yes'" [offLabel]="'No'" formControlName="HasAttachment" [readonly]="readonly"></kendo-switch>
+
+        </div>
+
+
+
+
+      </div>
+      <div class="col-sm-6">
+        <kendo-textbox-container floatingLabel="Created">
+          <kendo-dateinput formControlName="Created" [readonly]="readonly"></kendo-dateinput>
+        </kendo-textbox-container>
+
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-sm-12">
+        <div class="form-group">
+          <label for="notificationData" class="control-label">Notification</label>
+
+          <div id="notificationData" class="k-div" [innerHTML]="formGroupNotificationDetail.controls.Data.value">
+
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+    </div>
+
+
+
+  </form>
+
+  <kendo-dialog-actions>
+    <button class="k-button" (click)="onClose($event)">Close</button>
+
+  </kendo-dialog-actions>
+</kendo-dialog>

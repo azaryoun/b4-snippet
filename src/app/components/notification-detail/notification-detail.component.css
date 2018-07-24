@@ -1,0 +1,6 @@
+
+/* setting border for notification detail div */
+.k-div{
+    border-width: 1px;
+    border-style: solid
+}
