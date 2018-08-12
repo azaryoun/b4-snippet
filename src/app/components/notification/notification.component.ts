@@ -52,7 +52,7 @@ export class NotificationComponent implements OnInit {
     this.loading = true;
 
     // setting intentional delay just to show the screen loading icon
-    setInterval(() => {
+    setTimeout(() => {
       // fetching notification data by calling query method from _notificationService object
       this._notificationService.query(this.state);
 
@@ -91,7 +91,7 @@ export class NotificationComponent implements OnInit {
 
     // displaying screen loading icon over the kendo grid
     this.loading = true;
-
+  
     // setting intentional delay just to show the screen loading icon
     setTimeout(() => {
 
